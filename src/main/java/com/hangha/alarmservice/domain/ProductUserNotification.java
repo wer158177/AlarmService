@@ -36,4 +36,6 @@ public class ProductUserNotification {
         this.createdDate = LocalDateTime.now();
         this.modifiedDate = LocalDateTime.now();
     }
+
+
 }

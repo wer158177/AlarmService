@@ -21,9 +21,8 @@ public class Product {
     @Enumerated(EnumType.STRING)
     private StockStatus stockStatus;
 
-    public Product(long l, int i, StockStatus stockStatus) {
-        this.id = l;
-        this.restockRound = i;
+    public Product( int restockRound, StockStatus stockStatus) {
+        this.restockRound = restockRound;
         this.stockStatus = stockStatus;
 
     }
@@ -37,6 +36,15 @@ public class Product {
     //품절처리
     public void markAsOutOfStock() {
         this.stockStatus = StockStatus.OUT_OF_STOCK;
+    }
+
+    // 재고 상태 확인 메서드
+    public boolean isInStock() {
+        return this.stockStatus == StockStatus.IN_STOCK;
+    }
+
+    public boolean isOutOfStock() {
+        return this.stockStatus == StockStatus.OUT_OF_STOCK;
     }
 
 

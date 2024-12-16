@@ -31,17 +31,36 @@ public class ProductNotificationHistory {
         this.lastNotifiedUserId = lastNotifiedUserId;
     }
 
-    public void updateLastNotifiedUserId(Long lastNotifiedUserId) {
-        this.lastNotifiedUserId = lastNotifiedUserId;
+
+
+
+    // 상태 업데이트 메서드
+    public void updateNotificationStatus(NotificationStatus status, Long userId) {
+        this.notificationStatus = status;
+        this.lastNotifiedUserId = userId;
     }
 
-    public void completeNotification() {
-        this.notificationStatus = NotificationStatus.COMPLETED;
+    // 알림 오류 처리 메서드
+    public void markAsError(Long userId) {
+        updateNotificationStatus(NotificationStatus.CANCELED_BY_ERROR, userId);
     }
 
-    public void cancelDueToError() {
-        this.notificationStatus = NotificationStatus.CANCELED_BY_ERROR;
+    // 알림 완료 처리 메서드
+    public void markAsCompleted() {
+        updateNotificationStatus(NotificationStatus.COMPLETED, null);
     }
+    public void handleStockSoldOut(Long userId){
+        updateNotificationStatus(NotificationStatus.CANCELED_BY_SOLD_OUT,userId);
+        throw new IllegalStateException("알림 발송 중 재고가 소진되었습니다.");
+    }
+
+    // 알림 이력 생성메서드
+    public static ProductNotificationHistory create(Product product) {
+        return new ProductNotificationHistory(
+                product, product.getRestockRound(), NotificationStatus.IN_PROGRESS, null
+        );
+    }
+
 
 
 }

@@ -25,4 +25,7 @@ public class ProductUserNotificationHistory {
         this.restockRound = restockRound;
         this.sentAt = sentAt;
     }
+    public static ProductUserNotificationHistory create(Product product, Long userId) {
+        return new ProductUserNotificationHistory(product, userId, product.getRestockRound(), LocalDateTime.now());
+    }
 }
