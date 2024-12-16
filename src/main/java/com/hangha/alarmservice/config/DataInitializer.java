@@ -22,11 +22,18 @@ public class DataInitializer {
         return args -> {
             // 1번 상품 생성
             Product product = new Product( 0, StockStatus.OUT_OF_STOCK);
+            Product product2 = new Product( 0, StockStatus.OUT_OF_STOCK);
             productRepository.save(product);
+            productRepository.save(product2);
 
             // 500명 유저 알림 신청 생성
-            LongStream.rangeClosed(1, 500).forEach(userId -> {
+            LongStream.rangeClosed(0, 30).forEach(userId -> {
                 ProductUserNotification notification = new ProductUserNotification(product, userId);
+                userNotificationRepository.save(notification);
+            });
+
+            LongStream.rangeClosed(0,30).forEach(userId -> {
+                ProductUserNotification notification = new ProductUserNotification(product2, userId);
                 userNotificationRepository.save(notification);
             });
 

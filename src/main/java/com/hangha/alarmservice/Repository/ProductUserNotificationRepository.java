@@ -11,4 +11,9 @@ import java.util.List;
 public interface ProductUserNotificationRepository extends JpaRepository<ProductUserNotification, Long> {
     // 특정 상품의 알림 설정 사용자 조회
     List<ProductUserNotification> findByProductAndActiveTrue(Product product);
+
+    List<ProductUserNotification> findByProductIdAndUserIdGreaterThanEqualOrderByUserIdAsc(Long productId, Long userId);
+
+
+
 }
