@@ -35,3 +35,17 @@ out/
 
 ### VS Code ###
 .vscode/
+
+
+# MySQL data directory
+db_data/
+db_data/**
+
+# Ignore MySQL files
+*.sock
+*.log
+*.tmp
+*.dblwr
+*.ibd
+*.ibdata*
+
