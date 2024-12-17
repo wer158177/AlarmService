@@ -28,6 +28,8 @@ public class Product {
     }
 
 
+
+
     //입고처리
     public void restock() {
         this.restockRound++;
