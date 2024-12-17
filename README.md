@@ -41,6 +41,7 @@
 
 ## 시스템 아키텍처 및 ERD
 ### ERD 설계
+![AlarmSeviceERD](https://github.com/user-attachments/assets/3a3a1d23-ca9c-4d00-8147-cc13eb289675)
 
 1. **Product (상품):**
 
