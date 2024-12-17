@@ -104,9 +104,9 @@
 
 | **HTTP 메서드** | **URL**                 | **설명**   |
 | ------------ | ----------------------- | -------- |
-| `POST`       | `/api/products/restock` | 상품 재입고   |
-| `POST`       | `/api/products/soldout` | 상품 품절 처리 |
-| `POST`       | `/api/products/manual-notify` | 수동 재발송   |
+| `POST`       | `/products/{productId}/notifications/re-stock` | 상품 재입고   |
+| `POST`       | `/products/{productId}/mark-in-stock` | 상품 품절 처리 |
+| `POST`       | `/admin/products/{productId}/notifications/re-stock` | 수동 재발송   |
 
 ---
 
