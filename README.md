@@ -135,11 +135,11 @@
 ---
 
 ## 체크리스트
-- [x] 상품 관리 API 구현  
-  - [x] 알림 발송 로직 구현  
-  - [x] 품절 상태 처리 로직 구현  
-  - [x] 수동 재발송 API 구현  
-  - [x] 테스트 케이스 작성 및 검증  
+- <span style="color:blue;">✔ 상품 관리 API 구현</span>  
+  - <span style="color:blue;">✔ 알림 발송 로직 구현</span>  
+  - <span style="color:blue;">✔ 품절 상태 처리 로직 구현</span>  
+  - <span style="color:blue;">✔ 수동 재발송 API 구현</span>  
+  - <span style="color:blue;">✔ 테스트 케이스 작성 및 검증</span>
 
 
 ---
